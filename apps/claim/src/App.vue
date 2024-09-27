@@ -26,6 +26,7 @@ onMounted(() => {
     loading.value = false;
     return;
   }
+  loading.value = false;
 });
 </script>
 

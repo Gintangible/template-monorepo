@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import errorImage from '@/assets/image/err_404.png';
+import errorImage from '@/assets/images/err_404.png';
 
 const router = useRouter();
 
@@ -10,7 +10,7 @@ function goHome() {
 
 <template>
   <div class="w-full min-h-screen flex justify-center items-center">
-    <div class="text-12 color-#ccc">
+    <div class="text-12 color-#ccc text-center">
       <van-image :src="errorImage" />
       <div class="pt-18">
         咦…
