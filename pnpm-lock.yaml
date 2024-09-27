@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@gy/components':
+        specifier: workspace:*
+        version: link:packages/components
       '@gy/utils':
         specifier: workspace:*
         version: link:packages/utils
