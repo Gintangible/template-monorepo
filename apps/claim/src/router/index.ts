@@ -1,10 +1,14 @@
+import type { RouteRecordName } from 'vue-router';
+
 import { createRouter, createWebHashHistory } from 'vue-router';
 import { routes } from 'vue-router/auto-routes';
 
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-import type { EnhancedRouteLocation } from './types';
+import useRouteTransitionNameStore from '@/store/modules/routeTransitionName';
+import useRouteCacheStore from '@/store/modules/routeCache';
+
 NProgress.configure({ showSpinner: true, parent: '#app' });
 
 const router = createRouter({
@@ -12,8 +16,11 @@ const router = createRouter({
   routes
 });
 
-router.beforeEach((to: EnhancedRouteLocation, from, next) => {
+router.beforeEach((to: RouteRecordName, from, next) => {
   NProgress.start();
+  const routeCacheStore = useRouteCacheStore();
+  const routeTransitionNameStore = useRouteTransitionNameStore();
+
   if (to.path === '/') {
     next({
       name: 'Home'
@@ -33,17 +40,15 @@ router.beforeEach((to: EnhancedRouteLocation, from, next) => {
   // }
 
   // Route cache
-  // routeCacheStore.addRoute(to);
+  routeCacheStore.addRoute(to);
 
-  // if (to.meta.level > from.meta.level) {
-  //   routeTransitionNameStore.setName('slide-fadein-left');
-  // }
-  // else if (to.meta.level < from.meta.level) {
-  //   routeTransitionNameStore.setName('slide-fadein-right');
-  // }
-  // else {
-  //   routeTransitionNameStore.setName('');
-  // }
+  if (to.meta.level > from.meta.level) {
+    routeTransitionNameStore.setName('slide-fadein-left');
+  } else if (to.meta.level < from.meta.level) {
+    routeTransitionNameStore.setName('slide-fadein-right');
+  } else {
+    routeTransitionNameStore.setName('');
+  }
 
   next();
 });
