@@ -43,11 +43,10 @@ const diffTime = computed(() => {
       公告
     </div>
     <p class="indent-2em">
-      <!-- eslint-disable-next-line -->
-      理赔系统将于{{ notifyDateRange[0] | timeFormatInChinese }}更新维护，维护时长预计{{ diffTime }}，{{ notifyDateRange[1] | timeFormatInChinese }}恢复系统。
+      系统将于{{ startTime }}更新维护，维护时长预计{{ diffTime }}，{{ endTime }}恢复系统。
     </p>
     <p class="indent-2em">
-      届时理赔服务将暂停使用。
+      届时服务将暂停使用。
     </p>
     <p class="indent-2em">
       在此期间给您带来的不便敬请谅解。

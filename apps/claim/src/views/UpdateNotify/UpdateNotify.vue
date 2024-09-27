@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { UpdateNotify } from '@gy/components';
+import { serviceSetting } from '@/setting/serviceSetting';
 
 definePage({
   name: 'UpdateNotify',
@@ -9,12 +10,12 @@ definePage({
   },
 });
 
-const notifyDateRange=['2024-09-27', '2024-09-27']
+const notifyDateRange=serviceSetting.updateDateRange;
 </script>
 
 <template>
   <div>
-    <update-notify :notifyDateRange="notifyDateRange"  />
+    <update-notify :notifyDateRange="notifyDateRange" diff="hours" />
   </div>
 </template>
 <style lang="scss" scoped>

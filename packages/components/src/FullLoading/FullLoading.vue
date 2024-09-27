@@ -1,5 +1,6 @@
 
 <script setup lang="ts">
+import { Loading } from 'vant';
 
 defineOptions({
   name: 'FullLoading',
@@ -7,8 +8,8 @@ defineOptions({
 
 </script>
 <template>
-  <div class="px-14px py-10px text-16 lh-24px text-#f00 border-rd-10px bg-white">
-    加载页
+  <div class="flex justify-center items-center h-screen">
+    <van-loading size="24px" vertical>加载中...</van-loading>
   </div>
 </template>
 
