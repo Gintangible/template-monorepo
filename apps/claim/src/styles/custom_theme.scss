@@ -1,0 +1,14 @@
+// 自定义样式 https://nutui.jd.com/theme/#/base
+$primary-color: #3f73da;
+$primary-light-color: #e9f1fd;
+$primary-color-end: #2bb6ec;
+
+$primary-bg-color: #3278ee;
+
+$primary-background: linear-gradient(45deg, #3f73da, #2bb6ec);
+
+:root {
+  --nut-collapse-item-padding: 10px 16px;
+  --nut-tabs-horizontal-tab-line-color: #3f73da;
+  --nut-tabs-horizontal-titles-item-active-line-width: calc(100% - 40px);
+}

@@ -1,0 +1,49 @@
+{
+  "name": "template-repo",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:claim": "turbo dev --filter=claim",
+    "lint": "turbo lint",
+    "build": "turbo build",
+    "build:claim": "turbo build --filter=claim"
+  },
+  "dependencies": {
+    "@gy/utils": "workspace:*",
+    "@vueuse/core": "^10.9.0",
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.13",
+    "json-bigint": "^1.0.0",
+    "lodash-es": "^4.17.21",
+    "pinia": "^2.2.2",
+    "pinia-plugin-persistedstate": "^4.0.2",
+    "uuid": "^10.0.0",
+    "vant": "4",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "github:antfu/eslint-config",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@unocss/preset-rem-to-px": "^0.62.4",
+    "@vant/auto-import-resolver": "^1.2.1",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.11.1",
+    "husky": "^9.1.6",
+    "prettier": "^3.2.5",
+    "turbo": "^2.1.2",
+    "typescript": "^5.4.5",
+    "unocss": "^0.62.4",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.1",
+    "vue-tsc": "^2.1.6"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": ">=18"
+  }
+}
