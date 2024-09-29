@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, useAttrs } from 'vue';
-import { Button } from 'vant';
 import { omit } from 'lodash-es';
+import { ButtonGroupProps } from './type';
 
 defineOptions({
   name: 'ButtonGroup',
 });
 const emits = defineEmits(['cancel', 'confirm']);
 
-defineProps({
-  cancelVisible: Boolean,
+const props = withDefaults(defineProps<ButtonGroupProps>(), {
   cancelText: {
     type: String,
     default: '返回'
@@ -24,8 +22,16 @@ defineProps({
   },
 });
 
-const attrs = useAttrs();
-const buttonProps = omit(attrs, ['text', 'native-type', 'class', 'style']);
+const buttonProps = computed(() => {
+  return omit(props, [
+    'cancelVisible',
+    'cancelText',
+    'confirmVisible',
+    'confirmText',
+    'text',
+    'native-type'
+  ]);
+});
 
 function goBack() {
   emits('cancel');
@@ -38,7 +44,7 @@ function onConfirm() {
 
 <template>
   <div class="flex justify-around grow-1 btn-group">
-    <Button
+    <van-button
       v-if="cancelVisible"
       v-bind="buttonProps"
       native-type="button"
@@ -46,7 +52,7 @@ function onConfirm() {
       :text="cancelText"
       @click="goBack"
     />
-    <Button
+    <van-button
       v-if="confirmVisible"
       v-bind="buttonProps"
       :text="confirmText"

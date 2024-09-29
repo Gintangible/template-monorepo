@@ -40,7 +40,7 @@ onMounted(() => {
         </keep-alive>
       </transition>
     </router-view>
-    <van-divider class="fixed bottom-0 w-full color-#565656 ">
+    <van-divider class="fixed bottom-0 w-full color-#565656" safe-area-inset-bottom>
       {{ appVersion }}
     </van-divider>
   </div>

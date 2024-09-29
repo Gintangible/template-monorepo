@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { ButtonGroup } from '@gy/components';
 import errorImage from '@/assets/images/err_404.png';
 
 const router = useRouter();
@@ -19,9 +18,7 @@ function goHome() {
       <div class="my-16">
         正在努力升级系统<br> 稍等一下下，马上回来
       </div>
-      123
       <ButtonGroup size="small" type="primary" confirm-text="回到首页" @confirm="goHome" />
-      123
     </div>
   </div>
 </template>
