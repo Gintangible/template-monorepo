@@ -5,9 +5,9 @@ import { serviceSetting } from '@/setting/serviceSetting';
 definePage({
   name: 'UpdateNotify',
   path: '/update-notify',
-  meta: {
-    title: '升级公告',
-  },
+  // meta: {
+  //   title: '升级公告',
+  // },
 });
 
 const notifyDateRange=serviceSetting.updateDateRange;
