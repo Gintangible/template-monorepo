@@ -1,3 +1,4 @@
+import * as createAxios from './lib/axios/index';
 
 export { compressImage } from './lib/file.util';
 export * as fileUtil from './lib/file.util';

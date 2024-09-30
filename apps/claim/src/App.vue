@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { FullLoading } from '@gy/components';
 import { isDateInRange } from '@gy/utils';
 import { serviceSetting } from '@/setting/serviceSetting';
 import useRouteCache from '@/store/modules/routeCache';
